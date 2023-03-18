@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: moovi.zfsantosapp
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: MOOVI_S4
+          url: http://ndc-srvhana.opus-idc.com.br:8000
+          scp: true
+        app:
+          name: ZSANTOS_APP
+          package: ZFSFIORI
+          transport: S4HK900072
