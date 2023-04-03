@@ -206,7 +206,7 @@ sap.ui.define([
 
         onEditCompanyBtnPress: function (oEvent) {
 
-            var oEditModel = this.getView().getModel("editCompanyModel");
+            var oEditModel = this.getView().getModel("editBrandModel");
             oEditModel.setProperty("/isNew", false);
 
             if (!this.oDialogEditCompany) {
